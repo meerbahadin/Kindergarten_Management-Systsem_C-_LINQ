@@ -1,0 +1,10 @@
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\bin\Debug\Kindergarten.exe.config
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\bin\Debug\Kindergarten.exe
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\bin\Debug\Kindergarten.pdb
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.csprojAssemblyReference.cache
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.Form1.resources
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.Properties.Resources.resources
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.csproj.GenerateResource.cache
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.csproj.CopyComplete
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.exe
+C:\Users\Click\source\repos\Kindergarten\Kindergarten\obj\Debug\Kindergarten.pdb
