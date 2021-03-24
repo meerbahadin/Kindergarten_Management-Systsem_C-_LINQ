@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PreSchoolModelStoreContainer" CdmEntityContainer="PreSchoolEntities1">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PreSchoolModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_address">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_address">
+        <MappingFragment StoreEntitySet="tbl_address">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adrress" ColumnName="adrress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_attendance">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_attendance">
+        <MappingFragment StoreEntitySet="tbl_attendance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_child" ColumnName="id_child" />
+          <ScalarProperty Name="time_income" ColumnName="time_income" />
+          <ScalarProperty Name="time_left" ColumnName="time_left" />
+          <ScalarProperty Name="left_with" ColumnName="left_with" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="date_save" ColumnName="date_save" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_child_healthy">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_child_healthy">
+        <MappingFragment StoreEntitySet="tbl_child_healthy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_child" ColumnName="id_child" />
+          <ScalarProperty Name="id_child_disease_type" ColumnName="id_child_disease_type" />
+          <ScalarProperty Name="drug_allergy" ColumnName="drug_allergy" />
+          <ScalarProperty Name="darmany_naxoshiya_drezhxayanaka" ColumnName="darmany_naxoshiya_drezhxayanaka" />
+          <ScalarProperty Name="have_surgery" ColumnName="have_surgery" />
+          <ScalarProperty Name="note_of_surgery" ColumnName="note_of_surgery" />
+          <ScalarProperty Name="general_clinic_test_disease_type_note" ColumnName="general_clinic_test_disease_type_note" />
+          <ScalarProperty Name="general_clinic_test_disease_type" ColumnName="general_clinic_test_disease_type" />
+          <ScalarProperty Name="face_type" ColumnName="face_type" />
+          <ScalarProperty Name="child_height" ColumnName="child_height" />
+          <ScalarProperty Name="child_weight" ColumnName="child_weight" />
+          <ScalarProperty Name="food_eating_type" ColumnName="food_eating_type" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_child_info">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_child_info">
+        <MappingFragment StoreEntitySet="tbl_child_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="child_fullname" ColumnName="child_fullname" />
+          <ScalarProperty Name="income_date" ColumnName="income_date" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+          <ScalarProperty Name="form_number" ColumnName="form_number" />
+          <ScalarProperty Name="child_birthday" ColumnName="child_birthday" />
+          <ScalarProperty Name="id_child_place_of_birth" ColumnName="id_child_place_of_birth" />
+          <ScalarProperty Name="father_fullname" ColumnName="father_fullname" />
+          <ScalarProperty Name="father_phone" ColumnName="father_phone" />
+          <ScalarProperty Name="mother_fullname" ColumnName="mother_fullname" />
+          <ScalarProperty Name="mother_phone" ColumnName="mother_phone" />
+          <ScalarProperty Name="child_gender" ColumnName="child_gender" />
+          <ScalarProperty Name="child_language" ColumnName="child_language" />
+          <ScalarProperty Name="child_nationality" ColumnName="child_nationality" />
+          <ScalarProperty Name="parent_email" ColumnName="parent_email" />
+          <ScalarProperty Name="name_of_baby_steer" ColumnName="name_of_baby_steer" />
+          <ScalarProperty Name="baby_steer_phone" ColumnName="baby_steer_phone" />
+          <ScalarProperty Name="id_child_address" ColumnName="id_child_address" />
+          <ScalarProperty Name="serial_of_child" ColumnName="serial_of_child" />
+          <ScalarProperty Name="child_blood_type" ColumnName="child_blood_type" />
+          <ScalarProperty Name="number_of_bro_and_sis" ColumnName="number_of_bro_and_sis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_disease_assignment">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_disease_assignment">
+        <MappingFragment StoreEntitySet="tbl_disease_assignment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_disease_type" ColumnName="id_disease_type" />
+          <ScalarProperty Name="id_child_healthy" ColumnName="id_child_healthy" />
+          <ScalarProperty Name="rightt" ColumnName="rightt" />
+          <ScalarProperty Name="leftt" ColumnName="leftt" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_disease_type">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_disease_type">
+        <MappingFragment StoreEntitySet="tbl_disease_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_disease" ColumnName="name_disease" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_employee">
+        <MappingFragment StoreEntitySet="tbl_employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employee_fullname" ColumnName="employee_fullname" />
+          <ScalarProperty Name="employee_gender" ColumnName="employee_gender" />
+          <ScalarProperty Name="employee_job_title" ColumnName="employee_job_title" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="employee_phone" ColumnName="employee_phone" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_food">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_food">
+        <MappingFragment StoreEntitySet="tbl_food">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="food_type" ColumnName="food_type" />
+          <ScalarProperty Name="weekday" ColumnName="weekday" />
+          <ScalarProperty Name="first_time" ColumnName="first_time" />
+          <ScalarProperty Name="second_time" ColumnName="second_time" />
+          <ScalarProperty Name="third_time" ColumnName="third_time" />
+          <ScalarProperty Name="forth_time" ColumnName="forth_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_nurse">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_nurse">
+        <MappingFragment StoreEntitySet="tbl_nurse">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_child" ColumnName="id_child" />
+          <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_room_name">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_room_name">
+        <MappingFragment StoreEntitySet="tbl_room_name">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_rooms">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_rooms">
+        <MappingFragment StoreEntitySet="tbl_rooms">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_child" ColumnName="id_child" />
+          <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sociologist">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_sociologist">
+        <MappingFragment StoreEntitySet="tbl_sociologist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_child" ColumnName="id_child" />
+          <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_subject_activity">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_subject_activity">
+        <MappingFragment StoreEntitySet="tbl_subject_activity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_time_table">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_time_table">
+        <MappingFragment StoreEntitySet="tbl_time_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="sunday" ColumnName="sunday" />
+          <ScalarProperty Name="monday" ColumnName="monday" />
+          <ScalarProperty Name="tuesday" ColumnName="tuesday" />
+          <ScalarProperty Name="wednesday" ColumnName="wednesday" />
+          <ScalarProperty Name="thursday" ColumnName="thursday" />
+          <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+          <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+          <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+          <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_user">
+      <EntityTypeMapping TypeName="PreSchoolModel.tbl_user">
+        <MappingFragment StoreEntitySet="tbl_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="User_fullname" ColumnName="User_fullname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

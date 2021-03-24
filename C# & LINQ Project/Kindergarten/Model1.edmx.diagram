@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="56ff9661e9914f709932903f9a7ef6d9" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="PreSchoolModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_address" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_attendance" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_child_healthy" Width="1.5" PointX="3.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_child_info" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_disease_assignment" Width="1.5" PointX="6" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_disease_type" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_employee" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_food" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_nurse" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_room_name" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_rooms" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_sociologist" Width="1.5" PointX="8.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_subject_activity" Width="1.5" PointX="8.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_time_table" Width="1.5" PointX="3" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PreSchoolModel.tbl_user" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="PreSchoolModel.FK_Table_2_tbl_child_healthy" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_child_info_tbl_child_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_child_info_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_nurse_tbl_child_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_rooms_tbl_child_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_sociologist_tbl_child_info" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_Table_2_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_Table_2_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_disease_type_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_disease_type_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_employee_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_employee_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_nurse_tbl_room_name" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_nurse_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_nurse_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_room_name_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_room_name_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_rooms_tbl_room_name" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_sociologist_tbl_room_name" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_subject_activity_tbl_room_name" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_rooms_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_rooms_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_sociologist_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_sociologist_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_subject_activity_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_subject_activity_tbl_user1" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_time_table_tbl_user" ManuallyRouted="false" />
+        <AssociationConnector Association="PreSchoolModel.FK_tbl_time_table_tbl_user1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

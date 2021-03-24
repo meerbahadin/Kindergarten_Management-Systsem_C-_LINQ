@@ -1,0 +1,22 @@
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\bin\Debug\kindergarten2.exe.config
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\bin\Debug\kindergarten2.exe
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\bin\Debug\kindergarten2.pdb
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\Kindergarten System.csprojAssemblyReference.cache
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.addKids.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.childHealth.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.employee.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.general.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.Login.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.mainFrm.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.nurse.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.Properties.Resources.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.Rooms.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.sociallogist.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.subject.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.systemManagement.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.teacher.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.user.resources
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\Kindergarten System.csproj.GenerateResource.cache
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\Kindergarten System.csproj.CopyComplete
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.exe
+C:\Users\Click\source\repos\kindergarten2\kindergarten2\obj\Debug\kindergarten2.pdb

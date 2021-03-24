@@ -1,0 +1,1715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PreSchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbl_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adrress" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_child" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="time_income" Type="time" Precision="7" Nullable="false" />
+          <Property Name="time_left" Type="time" Precision="7" />
+          <Property Name="left_with" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="date_save" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_child_healthy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_child" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_child_disease_type" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="drug_allergy" Type="nvarchar" MaxLength="100" />
+          <Property Name="darmany_naxoshiya_drezhxayanaka" Type="nvarchar" MaxLength="100" />
+          <Property Name="have_surgery" Type="bit" />
+          <Property Name="note_of_surgery" Type="nvarchar(max)" />
+          <Property Name="general_clinic_test_disease_type_note" Type="nvarchar(max)" />
+          <Property Name="general_clinic_test_disease_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="face_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="child_height" Type="nvarchar" MaxLength="20" />
+          <Property Name="child_weight" Type="nvarchar" MaxLength="20" />
+          <Property Name="food_eating_type" Type="nvarchar" MaxLength="30" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_child_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="child_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="income_date" Type="date" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" Nullable="false" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+          <Property Name="form_number" Type="int" Nullable="false" />
+          <Property Name="child_birthday" Type="date" Nullable="false" />
+          <Property Name="id_child_place_of_birth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="father_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="father_phone" Type="nvarchar" MaxLength="25" />
+          <Property Name="mother_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mother_phone" Type="nvarchar" MaxLength="25" />
+          <Property Name="child_gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="child_language" Type="nvarchar" MaxLength="20" />
+          <Property Name="child_nationality" Type="nvarchar" MaxLength="20" />
+          <Property Name="parent_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_of_baby_steer" Type="nvarchar" MaxLength="50" />
+          <Property Name="baby_steer_phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_child_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="serial_of_child" Type="nvarchar" MaxLength="20" />
+          <Property Name="child_blood_type" Type="nvarchar" MaxLength="10" />
+          <Property Name="number_of_bro_and_sis" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_disease_assignment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_disease_type" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_child_healthy" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rightt" Type="text" />
+          <Property Name="leftt" Type="text" />
+          <Property Name="note" Type="text" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_disease_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_disease" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employee_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="employee_gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="employee_job_title" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="salary" Type="money" />
+          <Property Name="employee_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_food">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="food_type" Type="nvarchar" MaxLength="100" />
+          <Property Name="weekday" Type="nvarchar" MaxLength="50" />
+          <Property Name="first_time" Type="nvarchar" MaxLength="50" />
+          <Property Name="second_time" Type="nvarchar" MaxLength="50" />
+          <Property Name="third_time" Type="nvarchar" MaxLength="50" />
+          <Property Name="forth_time" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_nurse">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_child" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="note" Type="text" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="datetime_save" Type="datetime" Nullable="false" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_room_name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="room_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_rooms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_child" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_sociologist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_child" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="note" Type="text" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" Nullable="false" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_subject_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="note" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="id_room_name" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_time_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="time" Type="time" Precision="7" />
+          <Property Name="sunday" Type="nvarchar" MaxLength="50" />
+          <Property Name="monday" Type="nvarchar" MaxLength="50" />
+          <Property Name="tuesday" Type="nvarchar" MaxLength="50" />
+          <Property Name="wednesday" Type="nvarchar" MaxLength="50" />
+          <Property Name="thursday" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_user_save" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="datetime" />
+          <Property Name="id_user_update" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Precision="8" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="bit" />
+          <Property Name="User_Role" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <Association Name="FK_Table_2_tbl_child_healthy">
+          <End Role="tbl_child_healthy" Type="Self.tbl_child_healthy" Multiplicity="1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_healthy">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_child_healthy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_2_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_2_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_child_info_tbl_child_info">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_child_info">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_child_info_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_child_info">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_disease_type_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_type" Type="Self.tbl_disease_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_type">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_disease_type_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_type" Type="Self.tbl_disease_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_type">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_employee_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_employee" Type="Self.tbl_employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_employee_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_employee" Type="Self.tbl_employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_room_name">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_room_name_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_room_name">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_room_name_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_room_name">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_time_table_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_time_table" Type="Self.tbl_time_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_time_table">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_time_table_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_time_table" Type="Self.tbl_time_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_time_table">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PreSchoolModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_address" EntityType="Self.tbl_address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_attendance" EntityType="Self.tbl_attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_child_healthy" EntityType="Self.tbl_child_healthy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_child_info" EntityType="Self.tbl_child_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_disease_assignment" EntityType="Self.tbl_disease_assignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_disease_type" EntityType="Self.tbl_disease_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_food" EntityType="Self.tbl_food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_nurse" EntityType="Self.tbl_nurse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_room_name" EntityType="Self.tbl_room_name" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_rooms" EntityType="Self.tbl_rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_sociologist" EntityType="Self.tbl_sociologist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_subject_activity" EntityType="Self.tbl_subject_activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_time_table" EntityType="Self.tbl_time_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_user" EntityType="Self.tbl_user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Table_2_tbl_child_healthy" Association="Self.FK_Table_2_tbl_child_healthy">
+            <End Role="tbl_child_healthy" EntitySet="tbl_child_healthy" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_2_tbl_user" Association="Self.FK_Table_2_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_2_tbl_user1" Association="Self.FK_Table_2_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_child_info_tbl_child_info" Association="Self.FK_tbl_child_info_tbl_child_info">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_child_info_tbl_user" Association="Self.FK_tbl_child_info_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_disease_type_tbl_user" Association="Self.FK_tbl_disease_type_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_type" EntitySet="tbl_disease_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_disease_type_tbl_user1" Association="Self.FK_tbl_disease_type_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_type" EntitySet="tbl_disease_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_employee_tbl_user" Association="Self.FK_tbl_employee_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_employee" EntitySet="tbl_employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_employee_tbl_user1" Association="Self.FK_tbl_employee_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_employee" EntitySet="tbl_employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_child_info" Association="Self.FK_tbl_nurse_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_room_name" Association="Self.FK_tbl_nurse_tbl_room_name">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_user" Association="Self.FK_tbl_nurse_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_user1" Association="Self.FK_tbl_nurse_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_room_name_tbl_user" Association="Self.FK_tbl_room_name_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_room_name_tbl_user1" Association="Self.FK_tbl_room_name_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_child_info" Association="Self.FK_tbl_rooms_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_room_name" Association="Self.FK_tbl_rooms_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_user" Association="Self.FK_tbl_rooms_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_user1" Association="Self.FK_tbl_rooms_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_child_info" Association="Self.FK_tbl_sociologist_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_room_name" Association="Self.FK_tbl_sociologist_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_user" Association="Self.FK_tbl_sociologist_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_user1" Association="Self.FK_tbl_sociologist_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_room_name" Association="Self.FK_tbl_subject_activity_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_user" Association="Self.FK_tbl_subject_activity_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_user1" Association="Self.FK_tbl_subject_activity_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_time_table_tbl_user" Association="Self.FK_tbl_time_table_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_time_table" EntitySet="tbl_time_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_time_table_tbl_user1" Association="Self.FK_tbl_time_table_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_time_table" EntitySet="tbl_time_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PreSchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adrress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_child" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="time_income" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="time_left" Type="Time" Precision="7" />
+          <Property Name="left_with" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="date_save" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_child_healthy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_child" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_child_disease_type" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="drug_allergy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="darmany_naxoshiya_drezhxayanaka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="have_surgery" Type="Boolean" />
+          <Property Name="note_of_surgery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="general_clinic_test_disease_type_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="general_clinic_test_disease_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="face_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="child_height" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="child_weight" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="food_eating_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_disease_assignment" Relationship="Self.FK_Table_2_tbl_child_healthy" FromRole="tbl_child_healthy" ToRole="tbl_disease_assignment" />
+        </EntityType>
+        <EntityType Name="tbl_child_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="child_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="income_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <Property Name="form_number" Type="Int32" Nullable="false" />
+          <Property Name="child_birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_child_place_of_birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="father_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="father_phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="mother_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mother_phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="child_gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="child_language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="child_nationality" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="parent_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name_of_baby_steer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="baby_steer_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_child_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="serial_of_child" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="child_blood_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="number_of_bro_and_sis" Type="Int32" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_child_info_tbl_child_info" FromRole="tbl_child_info" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_child_info_tbl_user" FromRole="tbl_child_info" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_nurse" Relationship="Self.FK_tbl_nurse_tbl_child_info" FromRole="tbl_child_info" ToRole="tbl_nurse" />
+          <NavigationProperty Name="tbl_rooms" Relationship="Self.FK_tbl_rooms_tbl_child_info" FromRole="tbl_child_info" ToRole="tbl_rooms" />
+          <NavigationProperty Name="tbl_sociologist" Relationship="Self.FK_tbl_sociologist_tbl_child_info" FromRole="tbl_child_info" ToRole="tbl_sociologist" />
+        </EntityType>
+        <EntityType Name="tbl_disease_assignment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_disease_type" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_child_healthy" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="rightt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="leftt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_child_healthy" Relationship="Self.FK_Table_2_tbl_child_healthy" FromRole="tbl_disease_assignment" ToRole="tbl_child_healthy" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_Table_2_tbl_user" FromRole="tbl_disease_assignment" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_Table_2_tbl_user1" FromRole="tbl_disease_assignment" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_disease_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_disease" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_disease_type_tbl_user" FromRole="tbl_disease_type" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_disease_type_tbl_user1" FromRole="tbl_disease_type" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employee_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="employee_gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="employee_job_title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="employee_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_employee_tbl_user" FromRole="tbl_employee" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_employee_tbl_user1" FromRole="tbl_employee" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_food">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="food_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="weekday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="first_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="second_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="third_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="forth_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_nurse">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_child" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="datetime_save" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_child_info" Relationship="Self.FK_tbl_nurse_tbl_child_info" FromRole="tbl_nurse" ToRole="tbl_child_info" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_nurse_tbl_room_name" FromRole="tbl_nurse" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_nurse_tbl_user" FromRole="tbl_nurse" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user2" Relationship="Self.FK_tbl_nurse_tbl_user1" FromRole="tbl_nurse" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_room_name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="room_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_room_name_tbl_user" FromRole="tbl_room_name" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_room_name_tbl_user1" FromRole="tbl_room_name" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_rooms" Relationship="Self.FK_tbl_rooms_tbl_room_name" FromRole="tbl_room_name" ToRole="tbl_rooms" />
+          <NavigationProperty Name="tbl_sociologist" Relationship="Self.FK_tbl_sociologist_tbl_room_name" FromRole="tbl_room_name" ToRole="tbl_sociologist" />
+          <NavigationProperty Name="tbl_subject_activity" Relationship="Self.FK_tbl_subject_activity_tbl_room_name" FromRole="tbl_room_name" ToRole="tbl_subject_activity" />
+        </EntityType>
+        <EntityType Name="tbl_rooms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_child" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_child_info" Relationship="Self.FK_tbl_rooms_tbl_child_info" FromRole="tbl_rooms" ToRole="tbl_child_info" />
+          <NavigationProperty Name="tbl_room_name" Relationship="Self.FK_tbl_rooms_tbl_room_name" FromRole="tbl_rooms" ToRole="tbl_room_name" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_rooms_tbl_user" FromRole="tbl_rooms" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_rooms_tbl_user1" FromRole="tbl_rooms" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_sociologist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_child" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_room_name" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_child_info" Relationship="Self.FK_tbl_sociologist_tbl_child_info" FromRole="tbl_sociologist" ToRole="tbl_child_info" />
+          <NavigationProperty Name="tbl_room_name" Relationship="Self.FK_tbl_sociologist_tbl_room_name" FromRole="tbl_sociologist" ToRole="tbl_room_name" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_sociologist_tbl_user" FromRole="tbl_sociologist" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_sociologist_tbl_user1" FromRole="tbl_sociologist" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_subject_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_room_name" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_room_name" Relationship="Self.FK_tbl_subject_activity_tbl_room_name" FromRole="tbl_subject_activity" ToRole="tbl_room_name" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_subject_activity_tbl_user" FromRole="tbl_subject_activity" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_subject_activity_tbl_user1" FromRole="tbl_subject_activity" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_time_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <Property Name="sunday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="monday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tuesday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="wednesday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thursday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_user_save" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_save" Type="DateTime" Precision="3" />
+          <Property Name="id_user_update" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="datetime_update" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_time_table_tbl_user" FromRole="tbl_time_table" ToRole="tbl_user" />
+          <NavigationProperty Name="tbl_user1" Relationship="Self.FK_tbl_time_table_tbl_user1" FromRole="tbl_time_table" ToRole="tbl_user" />
+        </EntityType>
+        <EntityType Name="tbl_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="8" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="User_Role" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_child_info" Relationship="Self.FK_tbl_child_info_tbl_child_info" FromRole="tbl_user" ToRole="tbl_child_info" />
+          <NavigationProperty Name="tbl_child_info1" Relationship="Self.FK_tbl_child_info_tbl_user" FromRole="tbl_user" ToRole="tbl_child_info" />
+          <NavigationProperty Name="tbl_disease_assignment" Relationship="Self.FK_Table_2_tbl_user" FromRole="tbl_user" ToRole="tbl_disease_assignment" />
+          <NavigationProperty Name="tbl_disease_assignment1" Relationship="Self.FK_Table_2_tbl_user1" FromRole="tbl_user" ToRole="tbl_disease_assignment" />
+          <NavigationProperty Name="tbl_disease_type" Relationship="Self.FK_tbl_disease_type_tbl_user" FromRole="tbl_user" ToRole="tbl_disease_type" />
+          <NavigationProperty Name="tbl_disease_type1" Relationship="Self.FK_tbl_disease_type_tbl_user1" FromRole="tbl_user" ToRole="tbl_disease_type" />
+          <NavigationProperty Name="tbl_employee" Relationship="Self.FK_tbl_employee_tbl_user" FromRole="tbl_user" ToRole="tbl_employee" />
+          <NavigationProperty Name="tbl_employee1" Relationship="Self.FK_tbl_employee_tbl_user1" FromRole="tbl_user" ToRole="tbl_employee" />
+          <NavigationProperty Name="tbl_nurse" Relationship="Self.FK_tbl_nurse_tbl_room_name" FromRole="tbl_user" ToRole="tbl_nurse" />
+          <NavigationProperty Name="tbl_nurse1" Relationship="Self.FK_tbl_nurse_tbl_user" FromRole="tbl_user" ToRole="tbl_nurse" />
+          <NavigationProperty Name="tbl_nurse2" Relationship="Self.FK_tbl_nurse_tbl_user1" FromRole="tbl_user" ToRole="tbl_nurse" />
+          <NavigationProperty Name="tbl_room_name" Relationship="Self.FK_tbl_room_name_tbl_user" FromRole="tbl_user" ToRole="tbl_room_name" />
+          <NavigationProperty Name="tbl_room_name1" Relationship="Self.FK_tbl_room_name_tbl_user1" FromRole="tbl_user" ToRole="tbl_room_name" />
+          <NavigationProperty Name="tbl_rooms" Relationship="Self.FK_tbl_rooms_tbl_user" FromRole="tbl_user" ToRole="tbl_rooms" />
+          <NavigationProperty Name="tbl_rooms1" Relationship="Self.FK_tbl_rooms_tbl_user1" FromRole="tbl_user" ToRole="tbl_rooms" />
+          <NavigationProperty Name="tbl_sociologist" Relationship="Self.FK_tbl_sociologist_tbl_user" FromRole="tbl_user" ToRole="tbl_sociologist" />
+          <NavigationProperty Name="tbl_sociologist1" Relationship="Self.FK_tbl_sociologist_tbl_user1" FromRole="tbl_user" ToRole="tbl_sociologist" />
+          <NavigationProperty Name="tbl_subject_activity" Relationship="Self.FK_tbl_subject_activity_tbl_user" FromRole="tbl_user" ToRole="tbl_subject_activity" />
+          <NavigationProperty Name="tbl_subject_activity1" Relationship="Self.FK_tbl_subject_activity_tbl_user1" FromRole="tbl_user" ToRole="tbl_subject_activity" />
+          <NavigationProperty Name="tbl_time_table" Relationship="Self.FK_tbl_time_table_tbl_user" FromRole="tbl_user" ToRole="tbl_time_table" />
+          <NavigationProperty Name="tbl_time_table1" Relationship="Self.FK_tbl_time_table_tbl_user1" FromRole="tbl_user" ToRole="tbl_time_table" />
+        </EntityType>
+        <Association Name="FK_Table_2_tbl_child_healthy">
+          <End Role="tbl_child_healthy" Type="Self.tbl_child_healthy" Multiplicity="1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_healthy">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_child_healthy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_child_info_tbl_child_info">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_child_info">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_child_info_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_child_info">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_child_info">
+          <End Role="tbl_child_info" Type="Self.tbl_child_info" Multiplicity="1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_child_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_child" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_2_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_2_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_assignment" Type="Self.tbl_disease_assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_assignment">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_disease_type_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_type" Type="Self.tbl_disease_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_type">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_disease_type_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_disease_type" Type="Self.tbl_disease_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_disease_type">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_employee_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_employee" Type="Self.tbl_employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_employee_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_employee" Type="Self.tbl_employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_employee">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_room_name">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_nurse_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_nurse" Type="Self.tbl_nurse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_nurse">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_room_name_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_room_name">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_room_name_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_room_name">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_room_name">
+          <End Role="tbl_room_name" Type="Self.tbl_room_name" Multiplicity="1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_room_name">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_room_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_rooms_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_rooms" Type="Self.tbl_rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_rooms">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_sociologist_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_sociologist" Type="Self.tbl_sociologist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_sociologist">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_subject_activity_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_subject_activity" Type="Self.tbl_subject_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_subject_activity">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_time_table_tbl_user">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_time_table" Type="Self.tbl_time_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_time_table">
+              <PropertyRef Name="id_user_save" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_time_table_tbl_user1">
+          <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+          <End Role="tbl_time_table" Type="Self.tbl_time_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_time_table">
+              <PropertyRef Name="id_user_update" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PreSchoolEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbl_address" EntityType="Self.tbl_address" />
+          <EntitySet Name="tbl_attendance" EntityType="Self.tbl_attendance" />
+          <EntitySet Name="tbl_child_healthy" EntityType="Self.tbl_child_healthy" />
+          <EntitySet Name="tbl_child_info" EntityType="Self.tbl_child_info" />
+          <EntitySet Name="tbl_disease_assignment" EntityType="Self.tbl_disease_assignment" />
+          <EntitySet Name="tbl_disease_type" EntityType="Self.tbl_disease_type" />
+          <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" />
+          <EntitySet Name="tbl_food" EntityType="Self.tbl_food" />
+          <EntitySet Name="tbl_nurse" EntityType="Self.tbl_nurse" />
+          <EntitySet Name="tbl_room_name" EntityType="Self.tbl_room_name" />
+          <EntitySet Name="tbl_rooms" EntityType="Self.tbl_rooms" />
+          <EntitySet Name="tbl_sociologist" EntityType="Self.tbl_sociologist" />
+          <EntitySet Name="tbl_subject_activity" EntityType="Self.tbl_subject_activity" />
+          <EntitySet Name="tbl_time_table" EntityType="Self.tbl_time_table" />
+          <EntitySet Name="tbl_user" EntityType="Self.tbl_user" />
+          <AssociationSet Name="FK_Table_2_tbl_child_healthy" Association="Self.FK_Table_2_tbl_child_healthy">
+            <End Role="tbl_child_healthy" EntitySet="tbl_child_healthy" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_child_info_tbl_child_info" Association="Self.FK_tbl_child_info_tbl_child_info">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_child_info_tbl_user" Association="Self.FK_tbl_child_info_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_child_info" Association="Self.FK_tbl_nurse_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_child_info" Association="Self.FK_tbl_rooms_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_child_info" Association="Self.FK_tbl_sociologist_tbl_child_info">
+            <End Role="tbl_child_info" EntitySet="tbl_child_info" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_2_tbl_user" Association="Self.FK_Table_2_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_2_tbl_user1" Association="Self.FK_Table_2_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_assignment" EntitySet="tbl_disease_assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_disease_type_tbl_user" Association="Self.FK_tbl_disease_type_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_type" EntitySet="tbl_disease_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_disease_type_tbl_user1" Association="Self.FK_tbl_disease_type_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_disease_type" EntitySet="tbl_disease_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_employee_tbl_user" Association="Self.FK_tbl_employee_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_employee" EntitySet="tbl_employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_employee_tbl_user1" Association="Self.FK_tbl_employee_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_employee" EntitySet="tbl_employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_room_name" Association="Self.FK_tbl_nurse_tbl_room_name">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_user" Association="Self.FK_tbl_nurse_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_nurse_tbl_user1" Association="Self.FK_tbl_nurse_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_nurse" EntitySet="tbl_nurse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_room_name_tbl_user" Association="Self.FK_tbl_room_name_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_room_name_tbl_user1" Association="Self.FK_tbl_room_name_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_room_name" Association="Self.FK_tbl_rooms_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_room_name" Association="Self.FK_tbl_sociologist_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_room_name" Association="Self.FK_tbl_subject_activity_tbl_room_name">
+            <End Role="tbl_room_name" EntitySet="tbl_room_name" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_user" Association="Self.FK_tbl_rooms_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_rooms_tbl_user1" Association="Self.FK_tbl_rooms_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_rooms" EntitySet="tbl_rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_user" Association="Self.FK_tbl_sociologist_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_sociologist_tbl_user1" Association="Self.FK_tbl_sociologist_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_sociologist" EntitySet="tbl_sociologist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_user" Association="Self.FK_tbl_subject_activity_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_subject_activity_tbl_user1" Association="Self.FK_tbl_subject_activity_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_subject_activity" EntitySet="tbl_subject_activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_time_table_tbl_user" Association="Self.FK_tbl_time_table_tbl_user">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_time_table" EntitySet="tbl_time_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_time_table_tbl_user1" Association="Self.FK_tbl_time_table_tbl_user1">
+            <End Role="tbl_user" EntitySet="tbl_user" />
+            <End Role="tbl_time_table" EntitySet="tbl_time_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PreSchoolModelStoreContainer" CdmEntityContainer="PreSchoolEntities1">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PreSchoolModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_address">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_address">
+              <MappingFragment StoreEntitySet="tbl_address">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="adrress" ColumnName="adrress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_attendance">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_attendance">
+              <MappingFragment StoreEntitySet="tbl_attendance">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_child" ColumnName="id_child" />
+                <ScalarProperty Name="time_income" ColumnName="time_income" />
+                <ScalarProperty Name="time_left" ColumnName="time_left" />
+                <ScalarProperty Name="left_with" ColumnName="left_with" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="date_save" ColumnName="date_save" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_child_healthy">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_child_healthy">
+              <MappingFragment StoreEntitySet="tbl_child_healthy">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_child" ColumnName="id_child" />
+                <ScalarProperty Name="id_child_disease_type" ColumnName="id_child_disease_type" />
+                <ScalarProperty Name="drug_allergy" ColumnName="drug_allergy" />
+                <ScalarProperty Name="darmany_naxoshiya_drezhxayanaka" ColumnName="darmany_naxoshiya_drezhxayanaka" />
+                <ScalarProperty Name="have_surgery" ColumnName="have_surgery" />
+                <ScalarProperty Name="note_of_surgery" ColumnName="note_of_surgery" />
+                <ScalarProperty Name="general_clinic_test_disease_type_note" ColumnName="general_clinic_test_disease_type_note" />
+                <ScalarProperty Name="general_clinic_test_disease_type" ColumnName="general_clinic_test_disease_type" />
+                <ScalarProperty Name="face_type" ColumnName="face_type" />
+                <ScalarProperty Name="child_height" ColumnName="child_height" />
+                <ScalarProperty Name="child_weight" ColumnName="child_weight" />
+                <ScalarProperty Name="food_eating_type" ColumnName="food_eating_type" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_child_info">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_child_info">
+              <MappingFragment StoreEntitySet="tbl_child_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="child_fullname" ColumnName="child_fullname" />
+                <ScalarProperty Name="income_date" ColumnName="income_date" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+                <ScalarProperty Name="form_number" ColumnName="form_number" />
+                <ScalarProperty Name="child_birthday" ColumnName="child_birthday" />
+                <ScalarProperty Name="id_child_place_of_birth" ColumnName="id_child_place_of_birth" />
+                <ScalarProperty Name="father_fullname" ColumnName="father_fullname" />
+                <ScalarProperty Name="father_phone" ColumnName="father_phone" />
+                <ScalarProperty Name="mother_fullname" ColumnName="mother_fullname" />
+                <ScalarProperty Name="mother_phone" ColumnName="mother_phone" />
+                <ScalarProperty Name="child_gender" ColumnName="child_gender" />
+                <ScalarProperty Name="child_language" ColumnName="child_language" />
+                <ScalarProperty Name="child_nationality" ColumnName="child_nationality" />
+                <ScalarProperty Name="parent_email" ColumnName="parent_email" />
+                <ScalarProperty Name="name_of_baby_steer" ColumnName="name_of_baby_steer" />
+                <ScalarProperty Name="baby_steer_phone" ColumnName="baby_steer_phone" />
+                <ScalarProperty Name="id_child_address" ColumnName="id_child_address" />
+                <ScalarProperty Name="serial_of_child" ColumnName="serial_of_child" />
+                <ScalarProperty Name="child_blood_type" ColumnName="child_blood_type" />
+                <ScalarProperty Name="number_of_bro_and_sis" ColumnName="number_of_bro_and_sis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_disease_assignment">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_disease_assignment">
+              <MappingFragment StoreEntitySet="tbl_disease_assignment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_disease_type" ColumnName="id_disease_type" />
+                <ScalarProperty Name="id_child_healthy" ColumnName="id_child_healthy" />
+                <ScalarProperty Name="rightt" ColumnName="rightt" />
+                <ScalarProperty Name="leftt" ColumnName="leftt" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_disease_type">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_disease_type">
+              <MappingFragment StoreEntitySet="tbl_disease_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name_disease" ColumnName="name_disease" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_employee">
+              <MappingFragment StoreEntitySet="tbl_employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="employee_fullname" ColumnName="employee_fullname" />
+                <ScalarProperty Name="employee_gender" ColumnName="employee_gender" />
+                <ScalarProperty Name="employee_job_title" ColumnName="employee_job_title" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="employee_phone" ColumnName="employee_phone" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_food">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_food">
+              <MappingFragment StoreEntitySet="tbl_food">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="food_type" ColumnName="food_type" />
+                <ScalarProperty Name="weekday" ColumnName="weekday" />
+                <ScalarProperty Name="first_time" ColumnName="first_time" />
+                <ScalarProperty Name="second_time" ColumnName="second_time" />
+                <ScalarProperty Name="third_time" ColumnName="third_time" />
+                <ScalarProperty Name="forth_time" ColumnName="forth_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_nurse">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_nurse">
+              <MappingFragment StoreEntitySet="tbl_nurse">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_child" ColumnName="id_child" />
+                <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_room_name">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_room_name">
+              <MappingFragment StoreEntitySet="tbl_room_name">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="room_name" ColumnName="room_name" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_rooms">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_rooms">
+              <MappingFragment StoreEntitySet="tbl_rooms">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_child" ColumnName="id_child" />
+                <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_sociologist">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_sociologist">
+              <MappingFragment StoreEntitySet="tbl_sociologist">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_child" ColumnName="id_child" />
+                <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_subject_activity">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_subject_activity">
+              <MappingFragment StoreEntitySet="tbl_subject_activity">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="id_room_name" ColumnName="id_room_name" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_time_table">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_time_table">
+              <MappingFragment StoreEntitySet="tbl_time_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="sunday" ColumnName="sunday" />
+                <ScalarProperty Name="monday" ColumnName="monday" />
+                <ScalarProperty Name="tuesday" ColumnName="tuesday" />
+                <ScalarProperty Name="wednesday" ColumnName="wednesday" />
+                <ScalarProperty Name="thursday" ColumnName="thursday" />
+                <ScalarProperty Name="id_user_save" ColumnName="id_user_save" />
+                <ScalarProperty Name="datetime_save" ColumnName="datetime_save" />
+                <ScalarProperty Name="id_user_update" ColumnName="id_user_update" />
+                <ScalarProperty Name="datetime_update" ColumnName="datetime_update" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_user">
+            <EntityTypeMapping TypeName="PreSchoolModel.tbl_user">
+              <MappingFragment StoreEntitySet="tbl_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="User_fullname" ColumnName="User_fullname" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
