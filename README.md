@@ -1,6 +1,6 @@
 # Kindergarten Management Systsem C-SHARP And LINQ
 
-## Hello People 👋👋
+## 👋👋
 
 This project is a college project and the purpose of open sourcing it because I want to help other students out,
 clone this project and take a look at the code you see how the table and the forms are structured and hope it will 
